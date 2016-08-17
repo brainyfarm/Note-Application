@@ -12,6 +12,8 @@ class NoteApplication {
 		if ( typeof author === "string" && author.length > 0){
 		 this.noteAuthor = author;
 		 this.notes = [];
+		}else{
+			console.log("Author must be a valid string longer than 1")
 		}
 	}
 	
@@ -27,7 +29,7 @@ class NoteApplication {
 	 	if( note_content && typeof note_content === "string" && note_content.length > 0 )
 	 		this.notes.push( note_content );
 	 	else
-	 		console.log("N content must be a string with length greater than 1");
+	 		console.log("Note content must be a string with length greater than 1");
 	 }
 	 
 	 
@@ -78,6 +80,9 @@ class NoteApplication {
 	 search( search_text ) {
 	 	// Check to be sure search_text is a string and not empty
 	 	if( typeof search_text === "string" && search_text.length > 0){
+	 		// Keep track of the number of results found
+	 		let numberOfResults = 0;
+	 		
 	 	console.log("Showing results for search " + "\'" + search_text + "\'");
 	 
 	 	for(var i = 0; i < this.notes.length; i++) {
@@ -85,12 +90,15 @@ class NoteApplication {
     		
     		// If search_text is found in the current note
     		if( wordsInNoteArray.indexOf(search_text.toLowerCase()) > -1 ) {
-    		
+    			numberOfResults += 1;
+    			
        			console.log( "Note ID: " + i + "\n" + this.notes[i] + "\n" );
 	 			console.log("By Author " + this.noteAuthor + "\n");
        			
 					}					
 	 			}
+	 		// Check to see if no results were found	
+	 		numberOfResults === 0 ? console.log("No result found ") : console.log("");
 	 	}
 	 	// If search term is invalid
 	 	else{
@@ -129,3 +137,4 @@ class NoteApplication {
 	   			console.log("Please supply a valid note id and new content");
 	   		}
 	   }
+}
