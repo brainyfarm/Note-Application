@@ -6,11 +6,8 @@
 class NoteApplication {
 	
 	constructor( author ) {
-		
 		 this.noteAuthor = author;
 		 this.notes = [];
-		// console.log(noteAuthor);
-
 	}
 	
 	
@@ -21,9 +18,7 @@ class NoteApplication {
 	 * @PARAMS note_content
 	 */
 	 create( note_content ) {
-	 	
 	 	this.notes.push( note_content );
-	 	
 	 }
 	 
 	 
@@ -33,20 +28,18 @@ class NoteApplication {
 	  * Prints out individual note in the notes list
 	  */
 	 listNotes() {
-
 	 	for(let i = 0; i < this.notes.length; i++){
 	 		
 	 		let noteContent = this.notes[i];
 	 		let noteId = i;
 	 		
 	 		console.log( "Note ID: " + noteId + "\n" +
-	 					 	noteContent + "\n"
-	 		);
-	 		
+	 					 	noteContent + "\n" );
 	 		console.log("By Author " + this.noteAuthor + "\n");
 	 	}
 	 }
 	 
+
 	 /**
 	  * Method get  
 	  * @PARAMS note_id 
@@ -64,8 +57,8 @@ class NoteApplication {
 	  * @RETURN all note containing the string search_text
 	  */
 	 search( search_text ) {
+	 	// Check to be sure search_text is a string
 	 	if( typeof(search_text) === "string"){
-	 		
 	 	console.log("Showing results for search " + "\'" + search_text + "\'");
 	 
 	 	for(var i = 0; i < this.notes.length; i++) {
@@ -75,17 +68,12 @@ class NoteApplication {
     		if( wordsInNoteArray.indexOf(search_text.toLowerCase()) > -1 ) {
     		
        			console.log( "Note ID: " + i + "\n" +
-	 					 	this.notes[i] + "\n"
-	 		);
-	 		
+	 					 	this.notes[i] + "\n" );
 	 			console.log("By Author " + this.noteAuthor + "\n");
        			
-					}
-					
+					}					
 	 			}
 	 	}
-	 		
-	 	
 	 }
 	 
 	 
