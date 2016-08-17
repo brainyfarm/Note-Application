@@ -1,15 +1,15 @@
 /**
-* Class NoteApplication 
-* Has a constructor that accepts the note author (author)
-* constructor sets the instance variable author as the note author
+* A class for taking and managing notes 
+* @constructor 
 */
 class NoteApplication {
 	
 	constructor( author ) {
+		if ( typeof author === "string" && suthor.length > 0 ){
 		 this.noteAuthor = author;
 		 this.notes = [];
+		}
 	}
-	
 	
 	
 	/**
@@ -23,8 +23,7 @@ class NoteApplication {
 	 	this.notes.push( note_content );
 	 }
 	 
-	 
-	 
+	 	 
 	 /**
 	  * Method listNotes 
 	  * Prints out individual note in the notes list
@@ -89,7 +88,8 @@ class NoteApplication {
 	 	if( typeof note_id === "number" && this.notes[ note_id ])
 	  		this.notes.splice( note_id, 1);
 	  }
-	  
+	
+  
 	  /**
 	   * Method edit
 	   * replaces the content of note item
