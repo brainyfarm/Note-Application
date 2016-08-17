@@ -18,6 +18,8 @@ class NoteApplication {
 	 * @PARAMS note_content
 	 */
 	 create( note_content ) {
+	 	// Check to see note contain is a string and not empty
+	 	if( typeof note_content === "string" && note_content.length > 0 )
 	 	this.notes.push( note_content );
 	 }
 	 
@@ -33,8 +35,7 @@ class NoteApplication {
 	 		let noteContent = this.notes[i];
 	 		let noteId = i;
 	 		
-	 		console.log( "Note ID: " + noteId + "\n" +
-	 					 	noteContent + "\n" );
+	 		console.log( "Note ID: " + noteId + "\n" + noteContent + "\n" );
 	 		console.log("By Author " + this.noteAuthor + "\n");
 	 	}
 	 }
@@ -46,8 +47,9 @@ class NoteApplication {
 	  * @RETURNS content of note 
 	  */
 	 get( note_id ) {
-	 	if( this.notes[ note_id ])
-	 		return this.notes[note_id];
+	 	// Check to see note_id is a number and that the note exists
+	 	if( typeof note_id === "number" && this.notes[ note_id ])
+	 		return this.notes[ note_id ];
 	 } 
 	 
 	 
@@ -57,8 +59,8 @@ class NoteApplication {
 	  * @RETURN all note containing the string search_text
 	  */
 	 search( search_text ) {
-	 	// Check to be sure search_text is a string
-	 	if( typeof(search_text) === "string"){
+	 	// Check to be sure search_text is a string and not empty
+	 	if( typeof search_text === "string" && search.length > 0){
 	 	console.log("Showing results for search " + "\'" + search_text + "\'");
 	 
 	 	for(var i = 0; i < this.notes.length; i++) {
@@ -67,8 +69,7 @@ class NoteApplication {
     		// If search_text is found in the current note
     		if( wordsInNoteArray.indexOf(search_text.toLowerCase()) > -1 ) {
     		
-       			console.log( "Note ID: " + i + "\n" +
-	 					 	this.notes[i] + "\n" );
+       			console.log( "Note ID: " + i + "\n" + this.notes[i] + "\n" );
 	 			console.log("By Author " + this.noteAuthor + "\n");
        			
 					}					
@@ -83,9 +84,9 @@ class NoteApplication {
 	  * @PARAMS note_id
 	  */
 	  
-	  delete( note_id ) {
-	  	// Check if the note exists
-	  	if( this.note_id[ note_id ])
+	  delete( note_id ) {	 	
+	  // Check to see note_id is a number and that the note exists
+	 	if( typeof note_id === "number" && this.notes[ note_id ])
 	  		this.notes.splice( note_id, 1);
 	  }
 	  
@@ -95,8 +96,8 @@ class NoteApplication {
 	   * @PARAMS note_id, new_content
 	   */
 	   edit( note_id, new_content ) {
-	   		// If the note_id exists and the new_content is a string
-	   		if(this.notes[note_id] && typeof(new_content) === "string")
+	   		// Check note_id is a number, the note exists and the new_content is a string
+	   		if( typeof note_id === "number" && this.notes[note_id] && typeof(new_content) === "string")
 	   			this.notes[ note_id ] = new_content;
 	   }
 }

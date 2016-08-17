@@ -3,10 +3,10 @@
 ======
  A javascript note taking application.
 
-## Files
+## FILES
 * `note_taker.js` contains code for the NotesApplication app
 
-## Documentation
+## DOCUMENTATION
 
 ### Set Up 
 * To set up your note app and make yourself the default author, assume "Olawale" is the author:
