@@ -6,7 +6,7 @@
 class NoteApplication {
 	/**
 	 * @constructor 
-	 * @PARAMS author
+	 * @param author
 	 */
 	constructor( author ) {
 		if ( typeof author === "string" && author.length > 0){
@@ -22,7 +22,7 @@ class NoteApplication {
 	/**
 	 * Method create
 	 * Creates a new note
-	 * @PARAMS note_content
+	 * @param note_content
 	 */
 	 create( note_content ) {
 	 	// Check to see note contain is a string and not empty
@@ -59,8 +59,8 @@ class NoteApplication {
 
 	 /**
 	  * Method get  
-	  * @PARAMS note_id 
-	  * @RETURNS content of note 
+	  * @param note_id 
+	  * @return content of note 
 	  */
 	 get( note_id ) {
 	 	// Check to see note_id is a number and that the note exists
@@ -74,8 +74,8 @@ class NoteApplication {
 	 
 	 /**
 	  * Method search 
-	  * @PARAMS search_text
-	  * @RETURN all note containing the string search_text
+	  * @param search_text
+	  * @return all note containing the string search_text
 	  */
 	 search( search_text ) {
 	 	// Check to be sure search_text is a string and not empty
@@ -110,7 +110,7 @@ class NoteApplication {
 	 /**
 	  * Method delete
 	  * deletes note with the id note_id
-	  * @PARAMS note_id
+	  * @param note_id
 	  */
 	  
 	  delete( note_id ) {	 	
@@ -126,7 +126,7 @@ class NoteApplication {
 	  /**
 	   * Method edit
 	   * replaces the content of note item
-	   * @PARAMS note_id, new_content
+	   * @param note_id, new_content
 	   */
 	   edit( note_id, new_content ) {
 	   		// Check note_id is a number, the note exists and the new_content is a string
