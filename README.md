@@ -6,6 +6,9 @@
 ## FILES
 * `note_taker.js` contains code for the NotesApplication app
 
+
+======
+
 ## DOCUMENTATION
 
 ### Set Up 
