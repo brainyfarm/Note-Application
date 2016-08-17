@@ -60,7 +60,7 @@ class NoteApplication {
 	  */
 	 search( search_text ) {
 	 	// Check to be sure search_text is a string and not empty
-	 	if( typeof search_text === "string" && search.length > 0){
+	 	if( typeof search_text === "string" && search_text.length > 0){
 	 	console.log("Showing results for search " + "\'" + search_text + "\'");
 	 
 	 	for(var i = 0; i < this.notes.length; i++) {
