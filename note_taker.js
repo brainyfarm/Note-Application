@@ -12,7 +12,8 @@ class NoteApplication {
 		if ( typeof author === "string" && author.length > 0){
 		 this.noteAuthor = author;
 		 this.notes = [];
-		}else{
+		}
+		else{
 			console.log("Author must be a valid string longer than 1")
 		}
 	}
@@ -134,7 +135,7 @@ class NoteApplication {
 	   			this.notes[ note_id ] = new_content;
 	   		}
 	   		else{
-	   			console.log("Please supply a valid note id and new content");
+	   			console.log("Please supply a valid note id as well");
 	   		}
 	   }
 }
